@@ -10,11 +10,10 @@
       <div class="container">
         <div class="vision-content">
           <h2>合作理念</h2>
-          <p>数据智能创新中心秉持开放合作的理念，致力于构建产学研协同创新生态。我们欢迎与高校、企业、科研机构等开展多形式的合作，共同推动数据智能技术的发展和应用。</p>
-          <p>通过合作，我们可以整合优势资源，共享研究成果，加速技术创新和产业落地，为社会经济发展做出更大贡献。</p>
+          <p>河北软件职业技术学院数据智能创新中心秉持开放合作的理念，致力于构建产学研协同创新生态。我们欢迎与高校、企业、科研机构等开展多形式的合作，共同推动数据智能技术的发展和应用。</p>
         </div>
         <div class="vision-image">
-          <img src="https://picsum.photos/id/50/800/600" alt="合作交流">
+          <img src="../assets/hezuo.jpg" alt="合作交流">
         </div>
       </div>
     </section>
@@ -26,29 +25,12 @@
         <div class="modes-grid">
           <div class="mode-card" v-for="(mode, index) in cooperationModes" :key="index">
             <div class="mode-icon">
-              <i :class="mode.icon"></i>
+              <el-icon>
+                <component :is="mode.icon" />
+              </el-icon>
             </div>
             <h3 class="mode-title">{{ mode.title }}</h3>
             <p class="mode-desc">{{ mode.description }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 合作案例 -->
-    <section class="cooperation-cases">
-      <div class="container">
-        <h2 class="section-title">合作案例</h2>
-        <div class="cases-grid">
-          <div class="case-card" v-for="(item, index) in cooperationCases" :key="index">
-            <div class="case-image">
-              <img :src="item.image" :alt="item.title">
-            </div>
-            <div class="case-info">
-              <h3 class="case-title">{{ item.title }}</h3>
-              <p class="case-partner">{{ item.partner }}</p>
-              <p class="case-desc">{{ item.description }}</p>
-            </div>
           </div>
         </div>
       </div>
@@ -61,24 +43,30 @@
           <h2 class="section-title">联系我们</h2>
           <div class="contact-info">
             <div class="info-item">
-              <div class="info-icon"><i class="el-icon-location"></i></div>
+              <div class="info-icon"><el-icon>
+                  <Location />
+                </el-icon></div>
               <div class="info-text">
                 <h4>地址</h4>
-                <p>北京市海淀区中关村科技园区8号楼数据智能创新中心</p>
+                <p>河北省保定市莲池区东风东路999号</p>
               </div>
             </div>
             <div class="info-item">
-              <div class="info-icon"><i class="el-icon-phone"></i></div>
+              <div class="info-icon"><el-icon>
+                  <Phone />
+                </el-icon></div>
               <div class="info-text">
                 <h4>电话</h4>
-                <p>010-12345678</p>
+                <p>0312-5097654</p>
               </div>
             </div>
             <div class="info-item">
-              <div class="info-icon"><i class="el-icon-message"></i></div>
+              <div class="info-icon"><el-icon>
+                  <Message />
+                </el-icon></div>
               <div class="info-text">
                 <h4>邮箱</h4>
-                <p>contact@data-intelligence-center.com</p>
+                <p>wangxiang@hbsi.edu.cn</p>
               </div>
             </div>
           </div>
@@ -126,44 +114,24 @@ export default {
     return {
       cooperationModes: [
         {
-          icon: 'el-icon-science',
+          icon: 'Search',
           title: '联合研究',
-          description: '共同申请科研项目，开展前沿技术研究，发表高水平学术论文，联合培养研究生。'
+          description: '共同申请科研项目，开展前沿技术研究，发表高水平学术论文，联合培养学生。'
         },
         {
-          icon: 'el-icon-cpu',
+          icon: 'Connection',
           title: '技术合作',
           description: '针对企业实际需求，提供技术咨询、方案设计、系统开发等服务，共同解决技术难题。'
         },
         {
-          icon: 'el-icon-user-solid',
+          icon: 'School',
           title: '人才培养',
           description: '开展联合培训、实习实践、学术讲座等活动，培养数据科学领域的专业人才。'
         },
         {
-          icon: 'el-icon-link',
+          icon: 'Share',
           title: '资源共享',
           description: '共享数据集、计算资源、实验环境等，降低研发成本，提高创新效率。'
-        }
-      ],
-      cooperationCases: [
-        {
-          title: '智慧城市大数据分析平台',
-          partner: '某市政府',
-          description: '合作开发智慧城市大数据分析平台，实现城市运行数据的实时监测、分析和智能决策，提升城市管理水平和服务效率。',
-          image: 'https://picsum.photos/id/51/600/400'
-        },
-        {
-          title: '金融风控智能决策系统',
-          partner: '某大型银行',
-          description: '合作开发基于机器学习的金融风控智能决策系统，提高风险识别准确率，降低不良贷款率，提升金融服务质量。',
-          image: 'https://picsum.photos/id/52/600/400'
-        },
-        {
-          title: '医疗影像辅助诊断系统',
-          partner: '某知名医院',
-          description: '合作开发基于深度学习的医疗影像辅助诊断系统，提高疾病早期诊断的准确率和效率，减轻医生工作负担。',
-          image: 'https://picsum.photos/id/53/600/400'
         }
       ],
       contactForm: {
@@ -198,7 +166,7 @@ export default {
 }
 
 .page-header {
-  background: url('https://picsum.photos/id/23/1920/600') center/cover no-repeat;
+  background: url('../assets/bg/hezuo.jpg') center/cover no-repeat;
   padding: 120px 0;
   text-align: center;
   position: relative;
@@ -488,38 +456,38 @@ export default {
   .page-header {
     padding: 80px 0;
   }
-  
+
   .page-header h1 {
     font-size: 2.5rem;
   }
-  
+
   .cooperation-vision {
     flex-direction: column;
     padding: 60px 0;
   }
-  
+
   .vision-content {
     padding-right: 0;
     margin-bottom: 40px;
   }
-  
+
   .vision-image {
     width: 100%;
     height: 300px;
   }
-  
+
   .vision-content h2 {
     font-size: 1.8rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .cases-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
-  
+
   .contact-form {
     padding: 30px 20px;
   }
@@ -529,7 +497,7 @@ export default {
   .page-header h1 {
     font-size: 2rem;
   }
-  
+
   .mode-card,
   .info-item {
     padding: 25px 20px;

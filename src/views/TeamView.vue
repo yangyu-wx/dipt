@@ -10,12 +10,12 @@
       <div class="container">
         <div class="intro-content">
           <h2>团队概述</h2>
-          <p>数据智能创新中心成立于2019年，是专注于数据科学、人工智能和大数据分析的研究机构。团队由来自国内外知名高校和企业的专家学者组成，致力于推动数据智能技术的研发与应用。</p>
-          <p>我们的研究涵盖机器学习、深度学习、自然语言处理、计算机视觉等多个领域，在学术研究和产业应用方面均取得了丰硕成果。</p>
+          <p>数据智能创新中心成立于2023年，是专注于数据科学、人工智能和大数据分析的研究机构。团队由来自国内知名高校和企业的专家学者组成，致力于推动数据智能技术的研发与应用。</p>
+          <p>我们的研究涵盖大数据即使、机器学习、深度学习、自然语言处理、计算机视觉、软件技术等多个领域，在学术研究和产业应用方面均取得了丰硕成果。</p>
         </div>
         <div class="intro-stats">
           <div class="stat-item">
-            <div class="stat-number">20+</div>
+            <div class="stat-number">40+</div>
             <div class="stat-label">研究人员</div>
           </div>
           <div class="stat-item">
@@ -27,7 +27,7 @@
             <div class="stat-label">科研项目</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number">8+</div>
+            <div class="stat-number">10+</div>
             <div class="stat-label">合作企业</div>
           </div>
         </div>
@@ -59,52 +59,53 @@
 </template>
 
 <script>
+
 export default {
   name: 'TeamView',
   data() {
     return {
       teamMembers: [
         {
-          name: '张教授',
-          title: '中心主任 / 首席科学家',
-          image: 'https://picsum.photos/id/10/300/300',
-          bio: '博士生导师，国家杰出青年科学基金获得者，在数据挖掘和机器学习领域拥有20年研究经验。',
+          name: '刘海龙',
+          title: '中心主任',
+          image: 'public/mamber/liuhailong.jpg',
+          bio: '副教授，计算机工程硕士，河北软件职业技术学院教务处处长，兼任全国计算机与电商专委会常务委员。近三年在国内外期刊发表论文10余篇；主要参与编写教材3部，其中一部获评国家规划教材，承担市厅级以上课题5项，出版专著1部；发表实用新型专利1项，软件著作权4项；曾获国家级教学成果二等奖；指导学生参加全国职业技能大赛区块链技术应用、大数据技术应用赛项省赛一等奖两项，获省级优秀指导老师称号；曾获保定市优秀共产党员等荣誉。',
           researchAreas: ['机器学习', '数据挖掘', '人工智能']
         },
         {
-          name: '李博士',
-          title: '副主任 / 研究员',
-          image: 'https://picsum.photos/id/11/300/300',
-          bio: '哈佛大学博士，曾任职于谷歌研究院，主要研究方向为深度学习和计算机视觉。',
-          researchAreas: ['深度学习', '计算机视觉', '图像识别']
+          name: '耿兴隆',
+          title: '中心副主任',
+          image: 'public/mamber/gengxinglong.jpg',
+          bio: '副教授，硕士，河北软件职业技术学院软件工程系副主任，人工智能技术应用专业群带头人，微软银牌讲师，河北省高级“双师型”教师。兼任全国电子商务职业教育教学指导委员会委员，河北省首批技工教育和职业培训教学指导委员会委员，保定市科协科技创新智库专家，中国教育发展战略学会人工智能与机器人教育专业委员会委员，博雅大数据学院特聘讲师。曾获河北省职业院校技能大赛教学能力比赛二等奖。',
+          researchAreas: ['大模型应用', '嵌入式开发', '机器学习']
         },
         {
-          name: '王教授',
-          title: '研究员',
-          image: 'https://picsum.photos/id/12/300/300',
-          bio: '麻省理工学院博士后，在自然语言处理和知识图谱领域发表论文40余篇。',
-          researchAreas: ['自然语言处理', '知识图谱', '语义理解']
+          name: '石彦芳',
+          title: '中心副主任',
+          image: 'public/mamber/shiyanfang.jpg',
+          bio: '教授，硕士，软件开发工作室负责人，河北省高校黄大年式教师团队成员，河北省职业技能大赛软件测试赛项裁判长，河北省计算机教育研究会会员，河北软件职业技术学院学术委员会委员。主要研究方向为人工智能与大模型开发、软件项目管理，曾主持河北省教育厅“基于Three.js与Alot技术的智慧楼宇综合管理平台设计”、河北省人力资源与社会保障厅“AI大模型赋能软件技能人才培养，解决产业转型背景下人才质量提升问题”、保定市科技局“数理统计在排水管道维护管理系统中的分析与研究”等项目。',
+          researchAreas: ['大模型应用', '人工智能', '软件技术']
         },
         {
-          name: '赵博士',
-          title: '副研究员',
-          image: 'https://picsum.photos/id/13/300/300',
-          bio: '斯坦福大学博士，专注于强化学习和智能决策系统研究，获得多项国际大奖。',
-          researchAreas: ['强化学习', '智能决策', '多智能体系统']
+          name: '刘丽华',
+          title: '学术带头人',
+          image: 'public/mamber/liulihua.jpg',
+          bio: '副教授，硕士，河北软件职业技术学院专任教师，软件开发工作室核心开发人员。主要研究方向为人工智能与智慧交通、软件开发与测试，主持“基于语义Web物流系统的研究”、“基于云计算的数据挖掘平台的研究与应用”等多项市厅级课题，公开发表《Application of K-means supported by clustered systems in big data association rule mining》、《计算机软件在化学化工数据处理中的应用》等学术论文10余篇。',
+          researchAreas: ['大数据技术', '软件技术']
         },
         {
-          name: '陈博士',
-          title: '高级工程师',
-          image: 'https://picsum.photos/id/14/300/300',
-          bio: '前阿里巴巴技术专家，在大数据平台架构和分布式计算方面经验丰富。',
-          researchAreas: ['大数据', '分布式计算', '系统架构']
+          name: '郝艳荣',
+          title: '学术带头人',
+          image: 'public/mamber/haoyanrong.jpg',
+          bio: '副教授，硕士，河北软件职业技术学院软件技术专业（软件测试方向）带头人，软件开发工作室核心开发人员，“双师”型素质教师，全国职业院校技能大赛一等奖优秀指导教师，河北省职业院校技能大赛一等奖优秀指导教师，省级教学创新团队成员，国家级职业教育教学成果二等奖团队成员。从事软件技术专业教学工作10年，企业项目开发经验与教学经验丰富；参与软件技术专业、人工智能技术应用专业、大数据技术应用专业省级教学资源库建设.',
+          researchAreas: ['软件技术', '人工智能', '系统测试']
         },
         {
-          name: '刘教授',
-          title: '研究员',
-          image: 'https://picsum.photos/id/15/300/300',
-          bio: '清华大学博士，主要研究方向为隐私保护机器学习和联邦学习。',
-          researchAreas: ['隐私计算', '联邦学习', '安全机器学习']
+          name: '何惠',
+          title: '学术带头人',
+          image: 'public/mamber/hehui.jpg',
+          bio: '工学博士，河北软件职业技术学院专任教师。参与国家863计划项目课题“固体电解质纳米相变存储器研制”、“高密度存储与磁电子材料关键技术”、“基于超薄BiFeO3隧道结忆阻器的制备与类脑行为及其物理机制研究”，参与国家自然基金面上项目“基于外延铪基薄膜畴壁调控忆阻器仿神经网络计算与物理机制研究”，在《Nature Communications》、《Advanced Functional Materials》等期刊发表SCI论文10余篇。',
+          researchAreas: ['智能体开发', '联邦学习','电路设计']
         }
       ]
     }
@@ -120,7 +121,7 @@ export default {
 }
 
 .page-header {
-  background: url('https://picsum.photos/id/20/1920/600') center/cover no-repeat;
+  background: url('../assets/bg/team-bg.jpg') center/cover no-repeat;
   padding: 120px 0;
   text-align: center;
   position: relative;
@@ -264,7 +265,7 @@ export default {
 .member-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.5s ease;
 }
 

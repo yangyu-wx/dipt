@@ -2,14 +2,8 @@
   <div class="home-container">
     <!-- 全屏轮播图 -->
     <div class="carousel-wrapper">
-      <el-carousel 
-        class="full-screen-carousel" 
-        height="100vh" 
-        trigger="click" 
-        indicator-position="none"
-        :interval="5000"
-        arrow="always"
-      >
+      <el-carousel class="full-screen-carousel" height="100vh" trigger="click" indicator-position="none"
+        :interval="5000" arrow="always">
         <el-carousel-item v-for="(item, index) in carouselItems" :key="index">
           <div class="carousel-item">
             <img :src="item.image" alt="轮播图" class="carousel-image">
@@ -26,12 +20,15 @@
     <!-- 核心价值展示 -->
     <section class="values-section">
       <div class="container">
-        <h2 class="section-title">我们的核心价值</h2>
+        <h2 class="section-title">核心价值</h2>
         <div class="values-grid">
           <div class="value-item" v-for="(value, index) in coreValues" :key="index">
             <div class="value-icon">
-              <i :class="value.icon"></i>
+              <el-icon>
+                <component :is="value.icon" />
+              </el-icon>
             </div>
+            
             <h3 class="value-title">{{ value.title }}</h3>
             <p class="value-desc">{{ value.description }}</p>
           </div>
@@ -48,39 +45,39 @@ export default {
     return {
       carouselItems: [
         {
-          image: 'https://picsum.photos/id/1/1920/1080',
+          image: 'public/lunbo/ai1.jpg',
           title: '数据驱动未来',
           description: '探索人工智能与大数据分析的无限可能'
         },
         {
-          image: 'https://picsum.photos/id/2/1920/1080',
+          image: 'public/lunbo/ai2.jpg',
           title: '智能改变世界',
           description: '前沿技术研究与创新应用'
         },
         {
-          image: 'https://picsum.photos/id/3/1920/1080',
+          image: 'public/lunbo/ai3.jpg',
           title: '创新引领发展',
           description: '构建产学研协同创新生态'
         }
       ],
       coreValues: [
         {
-          icon: 'el-icon-data-line',
+          icon: 'DataLine',
           title: '数据智能',
           description: '利用先进的算法和模型，从海量数据中挖掘价值，驱动决策和创新。'
         },
         {
-          icon: 'el-icon-lightbulb',
+          icon: 'MagicStick',
           title: '技术创新',
-          description: '持续探索人工智能、机器学习等前沿技术，推动技术突破和应用落地。'
+          description: '持续探索人工智能、大数据等前沿技术，推动技术突破和应用落地。'
         },
         {
-          icon: 'el-icon-user-solid',
+          icon: 'School',
           title: '人才培养',
-          description: '培养具有国际视野和创新能力的数据科学人才，为社会输送高端智力支持。'
+          description: '培养具有国际视野和创新能力的数据科学、人工智能人才，为社会输送高端智力支持。'
         },
         {
-          icon: 'el-icon-link',
+          icon: 'Connection',
           title: '开放合作',
           description: '建立广泛的产学研合作网络，共同推动数据智能技术的发展和应用。'
         }
@@ -240,6 +237,7 @@ export default {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -251,15 +249,15 @@ export default {
   .animated-title {
     font-size: 2.5rem;
   }
-  
+
   .animated-desc {
     font-size: 1rem;
   }
-  
+
   .values-section {
     padding: 60px 0;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
@@ -269,7 +267,7 @@ export default {
   .animated-title {
     font-size: 2rem;
   }
-  
+
   .value-item {
     padding: 30px 20px;
   }

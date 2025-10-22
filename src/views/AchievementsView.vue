@@ -14,23 +14,31 @@
         </div>
         <div class="achievements-stats">
           <div class="stat-item">
-            <div class="stat-icon"><i class="el-icon-document"></i></div>
-            <div class="stat-number">120+</div>
+            <div class="stat-icon"><el-icon>
+                <Document />
+              </el-icon></div>
+            <div class="stat-number">80+</div>
             <div class="stat-label">学术论文</div>
           </div>
           <div class="stat-item">
-            <div class="stat-icon"><i class="el-icon-medal"></i></div>
+            <div class="stat-icon"><el-icon>
+                <Medal />
+              </el-icon></div>
             <div class="stat-number">30+</div>
             <div class="stat-label">专利技术</div>
           </div>
           <div class="stat-item">
-            <div class="stat-icon"><i class="el-icon-cpu"></i></div>
+            <div class="stat-icon"><el-icon>
+                <Cpu />
+              </el-icon></div>
             <div class="stat-number">50+</div>
             <div class="stat-label">软件著作权</div>
           </div>
           <div class="stat-item">
-            <div class="stat-icon"><i class="el-icon-trophy"></i></div>
-            <div class="stat-number">15+</div>
+            <div class="stat-icon"><el-icon>
+                <Trophy />
+              </el-icon></div>
+            <div class="stat-number">40+</div>
             <div class="stat-label">科研项目</div>
           </div>
         </div>
@@ -44,33 +52,29 @@
           <h2 class="section-title">代表性论文</h2>
           <div class="section-tabs">
             <el-tabs v-model="activeTab">
-              <el-tab-pane label="2023年">
+              <el-tab-pane label="2025年">
                 <div class="papers-grid">
-                  <div class="paper-card" v-for="(paper, index) in papers2023" :key="index">
+                  <div class="paper-card" v-for="(paper, index) in papers2025" :key="index">
                     <div class="paper-info">
                       <h3 class="paper-title">{{ paper.title }}</h3>
                       <p class="paper-authors">{{ paper.authors }}</p>
                       <p class="paper-venue"><span class="venue-tag">{{ paper.venue }}</span></p>
-                      <p class="paper-abstract">{{ paper.abstract }}</p>
                       <div class="paper-links">
-                        <a href="#" class="link-btn">PDF</a>
-                        <a href="#" class="link-btn">代码</a>
+                        <span href="#" class="link-btn">{{ paper.type }}</span>
                       </div>
                     </div>
                   </div>
                 </div>
               </el-tab-pane>
-              <el-tab-pane label="2022年">
+              <el-tab-pane label="2024年">
                 <div class="papers-grid">
-                  <div class="paper-card" v-for="(paper, index) in papers2022" :key="index">
+                  <div class="paper-card" v-for="(paper, index) in papers2024" :key="index">
                     <div class="paper-info">
                       <h3 class="paper-title">{{ paper.title }}</h3>
                       <p class="paper-authors">{{ paper.authors }}</p>
                       <p class="paper-venue"><span class="venue-tag">{{ paper.venue }}</span></p>
-                      <p class="paper-abstract">{{ paper.abstract }}</p>
                       <div class="paper-links">
-                        <a href="#" class="link-btn">PDF</a>
-                        <a href="#" class="link-btn">代码</a>
+                        <span href="#" class="link-btn">{{ paper.type }}</span>
                       </div>
                     </div>
                   </div>
@@ -85,7 +89,7 @@
     <!-- 专利成果 -->
     <section class="patents-section">
       <div class="container">
-        <h2 class="section-title">专利技术</h2>
+        <h2 class="section-title">知识产权</h2>
         <div class="patents-grid">
           <div class="patent-card" v-for="(patent, index) in patents" :key="index">
             <div class="patent-header">
@@ -93,7 +97,6 @@
               <span class="patent-date">{{ patent.date }}</span>
             </div>
             <h3 class="patent-title">{{ patent.title }}</h3>
-            <p class="patent-desc">{{ patent.description }}</p>
             <div class="patent-number">专利号：{{ patent.number }}</div>
           </div>
         </div>
@@ -106,14 +109,12 @@
         <h2 class="section-title">科研项目</h2>
         <div class="projects-grid">
           <div class="project-card" v-for="(project, index) in projects" :key="index">
-            <div class="project-image">
-              <img :src="project.image" alt="{{ project.title }}">
-            </div>
+
             <div class="project-info">
               <h3 class="project-title">{{ project.title }}</h3>
               <p class="project-funding">{{ project.funding }}</p>
-              <p class="project-period">项目周期：{{ project.period }}</p>
-              <p class="project-desc">{{ project.description }}</p>
+              <p class="project-period">项目时间：{{ project.period }}</p>
+              <p class="project-desc">{{ project.type }}</p>
             </div>
           </div>
         </div>
@@ -128,103 +129,215 @@ export default {
   data() {
     return {
       activeTab: '0',
-      papers2023: [
+      papers2025: [
         {
-          title: '基于图神经网络的大规模知识图谱推理方法研究',
-          authors: 'Zhang L, Li J, Wang H, et al.',
-          venue: 'IEEE Transactions on Knowledge and Data Engineering',
-          abstract: '本研究提出了一种基于图神经网络的知识图谱推理方法，能够有效处理大规模知识图谱中的复杂推理任务，在多个标准数据集上取得了显著优于现有方法的性能。',
-          year: 2023
+          title: 'Artificial vision system design and implementation  Journal of Materials Chemistry C',
+          authors: '何惠',
+          venue: 'Journal of Materials Chemistry C',
+          type: 'SCI',
+          year: 2025
         },
         {
-          title: '面向隐私保护的联邦学习优化算法',
-          authors: 'Liu Y, Chen M, Zhao K, et al.',
-          venue: 'NeurIPS 2023',
-          abstract: '针对联邦学习中的隐私保护和通信效率问题，提出了一种新型的优化算法，在保证模型性能的同时，显著降低了通信开销和隐私泄露风险。',
-          year: 2023
+          title: 'CdSe quantum dots photoelectric memristors for simulating biological visual system behavior',
+          authors: '何惠',
+          venue: 'Applied Physics Letters',
+          type: 'SCI',
+          year: 2025
         },
         {
-          title: '多模态预训练语言模型的跨语言理解能力研究',
-          authors: 'Wang Z, Zhang X, Li Y, et al.',
-          venue: 'ACL 2023',
-          abstract: '深入研究了多模态预训练语言模型在跨语言理解任务中的表现，发现了其关键优势和局限性，并提出了针对性的改进方法。',
-          year: 2023
-        }
+          title: 'Corn Leaf Spot Disease Recognition Based on Improved YOLOv8',
+          authors: '姚竟发',
+          venue: 'Agriculture-Basel',
+          type: 'SCI',
+          year: 2025
+        },
+        {
+          title: 'Surface detection method of glass fibre composites based on computer vision',
+          authors: '石彦芳',
+          venue: 'International Journal of Modelling Identification and Control',
+          type: 'EI',
+          year: 2025
+        }, {
+          title: 'Estimation of pile settlement applying hybrid ALO-MLP and GOA-MLP approaches',
+          authors: '胡金扣',
+          venue: 'Journal of Applied Science and Engineering',
+          type: 'EI',
+          year: 2025
+        },
+
       ],
-      papers2022: [
+      papers2024: [
         {
-          title: '基于深度学习的医疗影像诊断系统设计与实现',
-          authors: 'Chen W, Wang J, Liu B, et al.',
-          venue: 'Nature Medicine',
-          abstract: '开发了一套基于深度学习的医疗影像诊断系统，能够辅助医生进行疾病诊断，提高诊断准确率和效率，已在多家医院进行临床试验。',
-          year: 2022
+          title: 'A Hamming Weight Calculation of Binary String in One nMOS TransistorOne Ag/HfO2/Black Phosphorus/Pt Memristor',
+          authors: '何惠',
+          venue: 'IEEE Transactions On Electron Devices',
+          type: 'SCI',
+          year: 2024
         },
         {
-          title: '大规模时序数据的异常检测算法研究',
-          authors: 'Li H, Zhang Q, Wang S, et al.',
-          venue: 'ICML 2022',
-          abstract: '提出了一种适用于大规模时序数据的异常检测算法，能够实时识别数据中的异常模式，在金融、交通等领域有广泛应用前景。',
-          year: 2022
+          title: 'An intelligent model approach for leakage detection of modiffed atmosphere pillow bags',
+          authors: '姚竟发',
+          venue: 'Engineering Applications of Artiffcial Intelligence',
+          type: 'SCI',
+          year: 2024
         },
         {
-          title: '智能推荐系统中的公平性与多样性平衡研究',
-          authors: 'Zhao M, Liu L, Chen X, et al.',
-          venue: 'WWW 2022',
-          abstract: '研究了智能推荐系统中公平性与多样性之间的平衡问题，提出了一种新的优化框架，能够在保证推荐效果的同时，提升系统的公平性和多样性。',
-          year: 2022
-        }
+          title: 'Improved YOLOv5 Network for Detection of Peach Blossom Quantity',
+          authors: '姚竟发',
+          venue: 'Agriculture-Basel',
+          type: 'SCI',
+          year: 2024
+        },
+        {
+          title: 'Human activities recognition from video images by using convolutional neural network',
+          authors: '王丹',
+          venue: 'Journal of Intelligent & Fuzzy Systems',
+          type: 'EI',
+          year: 2024
+        },
       ],
       patents: [
         {
-          title: '一种基于深度学习的智能问答方法及系统',
-          type: '发明专利',
-          date: '2023-08',
-          number: 'ZL202110456789.0',
-          description: '本发明涉及一种基于深度学习的智能问答方法及系统，能够理解用户的自然语言问题，并从海量知识库中检索相关信息，生成准确的回答。'
+          "title": "一种智慧交通监测识别与调控方法及系统",
+          "type": "发明专利",
+          "date": "2025-06",
+          "number": "第7981637号"
         },
         {
-          title: '一种面向大数据平台的数据安全防护系统',
-          type: '发明专利',
-          date: '2023-05',
-          number: 'ZL202110345678.1',
-          description: '本发明提供了一种面向大数据平台的数据安全防护系统，包括数据加密、访问控制、异常检测等多个模块，能够全方位保障数据安全。'
+          "title": "一种基于3d虚拟仿真的场景展示系统及方法",
+          "type": "发明专利",
+          "date": "2024-11",
+          "number": "第7517577号"
+        },
+
+        {
+          "title": "分级认证系统及方法",
+          "type": "发明专利",
+          "date": "2024-07",
+          "number": "CN118802166A"
         },
         {
-          title: '一种多模态数据融合分析方法',
-          type: '发明专利',
-          date: '2022-12',
-          number: 'ZL202010678901.2',
-          description: '本发明涉及一种多模态数据融合分析方法，能够有效整合文本、图像、音频等多种数据类型，提取更全面的特征信息。'
+          "title": "物联网组网优化技术",
+          "type": "发明专利",
+          "date": "2024-05",
+          "number": "CN118801960A"
         },
         {
-          title: '一种基于强化学习的智能决策系统',
-          type: '发明专利',
-          date: '2022-09',
-          number: 'ZL202010567890.3',
-          description: '本发明提供了一种基于强化学习的智能决策系统，能够在复杂环境中自主学习最优决策策略，适用于智能控制、资源调度等场景。'
+          "title": "一种基于机器视觉的汽车漆膜缺陷检测装置",
+          "type": "实用新型专利",
+          "date": "2025-01",
+          "number": "第22291636号"
+        },
+        {
+          "title": "E 波段微波通信信号处理装置",
+          "type": "实用新型专利",
+          "date": "2024-06",
+          "number": "CN222814225U"
+        },
+        {
+          "title": "一种交通信号灯防绿冲突装置",
+          "type": "实用新型专利",
+          "date": "2023-01",
+          "number": "第18312990号"
+        },
+        {
+          "title": "一种车载低频射频检测装置",
+          "type": "实用新型专利",
+          "date": "2023-10",
+          "number": "第19813001号"
+        },
+        {
+          "title": "一种磁钢连接式交通护栏",
+          "type": "实用新型专利",
+          "date": "2023-12",
+          "number": "第20101751号"
+        },
+        {
+          "title": "城市魔方交通信号控制机",
+          "type": "外观设计专利",
+          "date": "2023-07",
+          "number": "第8149487号"
         }
       ],
       projects: [
         {
-          title: '国家重点研发计划：大数据驱动的智能决策理论与方法',
-          funding: '国家自然科学基金重点项目',
-          period: '2023-2026',
-          description: '研究大数据环境下智能决策的理论基础和方法体系，开发面向复杂系统的智能决策支持系统。',
-          image: 'https://picsum.photos/id/40/600/400'
+          "title": "医疗大数据分析与人工智能在疾病预测和诊断中的应用",
+          "funding": "河北省教育厅",
+          "period": "2023.11",
+          "type": "纵向课题"
         },
         {
-          title: '面向医疗健康的人工智能辅助诊断系统研发',
-          funding: '产学研合作项目',
-          period: '2022-2024',
-          description: '开发基于深度学习的医疗影像辅助诊断系统，提高疾病早期诊断的准确率和效率。',
-          image: 'https://picsum.photos/id/41/600/400'
+          "title": "基于深度学习技术的智慧就业推荐系统研究与实现",
+          "funding": "河北省教育厅",
+          "period": "2023.12-2025.12",
+          "type": "纵向课题"
         },
         {
-          title: '智慧城市大数据分析平台建设',
-          funding: '地方政府重点项目',
-          period: '2021-2023',
-          description: '构建智慧城市大数据分析平台，实现城市运行数据的实时监测、分析和智能决策。',
-          image: 'https://picsum.photos/id/42/600/400'
+          "title": "生成式人工智能下高职院校网络舆情风险和应对策略研究",
+          "funding": "河北省教育厅",
+          "period": "2023.11-2025.5",
+          "type": "纵向课题"
+        },
+        {
+          "title": "绿色建筑发展背景下建筑钢结构用多功能防火涂料的研发与应用",
+          "funding": "河北省教育厅",
+          "period": "2024.12",
+          "type": "纵向课题"
+        },
+
+        {
+          "title": "机器视觉技术在智能制造领域中的基础研究",
+          "funding": "保定市科技局",
+          "period": "2023.11-2024.12",
+          "type": "纵向课题"
+        },
+        {
+          "title": "智能制造领域机器视觉应用研究",
+          "funding": "保定市科技局",
+          "period": "2023.11-2024.12",
+          "type": "纵向课题"
+        },
+        {
+          "title": "保定市基于全生命周期的智能建造BIM5D技术应用研究",
+          "funding": "保定市科技局",
+          "period": "2024.4",
+          "type": "纵向课题"
+        },
+        {
+          "title": "基于Three.js与AIoT技术的智慧楼宇综合管理平台设计",
+          "funding": "河北省教育厅",
+          "period": "2023.11-2025.12",
+          "type": "纵向课题"
+        },
+        {
+          "title": "智慧城市背景下老年人可穿戴式监护设备软件系统的设计研究",
+          "funding": "河北省教育厅",
+          "period": "2023.11-2025.12",
+          "type": "纵向课题"
+        },
+        {
+          "title": "“特种兵学校”系列图书项目",
+          "funding": "河北少年儿童出版社有限责任公司",
+          "period": "2024.3.11",
+          "type": "横向课题"
+        },
+        {
+          "title": "动动移动信号灯微信小程序",
+          "funding": "维特瑞交通科技有限公司",
+          "period": "2024.6-2024.10",
+          "type": "横向课题"
+        },
+        {
+          "title": "计算机性能优化方案设计及测试",
+          "funding": "保定市莲池区宗敏电子商行",
+          "period": "2023.12-2024.6",
+          "type": "横向课题"
+        },
+        {
+          "title": "“快乐农场”劳动教学服务系统",
+          "funding": "九州永定农业股份有限公司",
+          "period": "2023.8-2024.7",
+          "type": "横向课题"
         }
       ]
     }
@@ -240,7 +353,7 @@ export default {
 }
 
 .page-header {
-  background: url('https://picsum.photos/id/22/1920/600') center/cover no-repeat;
+  background: url('../assets/bg/reward.jpg') center/cover no-repeat;
   padding: 120px 0;
   text-align: center;
   position: relative;
@@ -466,6 +579,7 @@ export default {
   color: rgba(255, 255, 255, 0.7);
   margin: 15px 0;
   font-size: 0.95rem;
+
 }
 
 .patent-number {
@@ -505,9 +619,14 @@ export default {
 }
 
 .project-desc {
-  line-height: 1.6;
+  height: 30px;
+  line-height: 30px;
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
+  width: 90px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #7b61ff;
 }
 
 /* 响应式设计 */
@@ -515,19 +634,19 @@ export default {
   .page-header {
     padding: 80px 0;
   }
-  
+
   .page-header h1 {
     font-size: 2.5rem;
   }
-  
+
   .overview-content h2 {
     font-size: 1.8rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .papers-grid,
   .patents-grid,
   .projects-grid {
@@ -539,11 +658,11 @@ export default {
   .page-header h1 {
     font-size: 2rem;
   }
-  
+
   .stat-item {
     padding: 30px 20px;
   }
-  
+
   .paper-card,
   .patent-card,
   .project-card {

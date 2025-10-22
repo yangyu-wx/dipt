@@ -15,7 +15,9 @@
         <div class="research-areas">
           <div class="area-item" v-for="(area, index) in researchAreas" :key="index" @click="scrollToDetail(area.id)">
             <div class="area-icon">
-              <i :class="area.icon"></i>
+              <el-icon>
+                <component :is="area.icon"></component>
+              </el-icon>
             </div>
             <h3 class="area-title">{{ area.title }}</h3>
             <p class="area-desc">{{ area.brief }}</p>
@@ -32,7 +34,9 @@
       <div class="container">
         <div class="detail-item" :id="area.id" v-for="(area, index) in researchAreas" :key="index">
           <div class="detail-header">
-            <div class="detail-icon"><i :class="area.icon"></i></div>
+            <div class="detail-icon"> <el-icon>
+                <component :is="area.icon"></component>
+              </el-icon></div>
             <h2 class="detail-title">{{ area.title }}</h2>
           </div>
           <div class="detail-content">
@@ -46,7 +50,7 @@
               </div>
             </div>
             <div class="detail-image">
-              <img :src="area.image" alt="{{ area.title }}">
+              <img :src="area.image" :alt="area.title">
             </div>
           </div>
         </div>
@@ -76,93 +80,57 @@ export default {
     return {
       researchAreas: [
         {
-          id: 'machine-learning',
-          icon: 'el-icon-connection',
-          title: '机器学习与数据挖掘',
-          brief: '开发高效的机器学习算法和数据挖掘技术，从海量数据中提取有价值的信息和知识。',
-          image: 'https://picsum.photos/id/30/600/400',
-          details: [
-            '本方向主要研究如何设计和实现高效的机器学习算法，特别是针对大规模、高维度、多模态数据的处理方法。我们关注算法的可解释性、鲁棒性和可扩展性，以及在实际应用中的性能优化。',
-            '重点研究领域包括但不限于：深度学习、强化学习、迁移学习、联邦学习、主动学习等。我们的研究既有理论创新，也注重实际应用，成果已在智能推荐、异常检测、预测分析等多个领域得到应用。'
+          "id": "heterogeneous-dataset",
+          "icon": "DataAnalysis",
+          "title": "高质量异构数据集构建技术",
+          "brief": "聚焦交通、教育、康养陪伴三大行业，构建覆盖数据全生命周期的高质量异构数据集技术体系，提供标准化、可定制化数据支撑。",
+          "image": "public/sucai/research1.jpg",
+          "details": [
+            "本研究为河北省数据智能技术创新中心建设提供数据底座，围绕三大典型行业，开展多源异构数据实时/批量采集、统一存储、智能预处理与质量提升技术研究，突破行业数据集成与治理关键瓶颈。",
+            "开发高可用集群数据集构建与管理平台，形成覆盖数据全生命周期的技术体系，构建高质量行业数据集，支撑区域产业数字化转型与数据资源规范流通。"
           ],
-          topics: [
-            '大规模深度学习模型优化',
-            '联邦学习与隐私保护',
-            '自监督学习与少样本学习',
-            '时序数据挖掘与预测',
-            '图神经网络与关系学习'
+          "topics": [
+            "多源异构数据统一采集存储",
+            "智能数据预处理与质量提升",
+            "行业数据集标准化构建",
+            "数据集全生命周期管理",
+            "数据资源规范流通技术"
           ]
         },
         {
-          id: 'nlp',
-          icon: 'el-icon-chat-line-round',
-          title: '自然语言处理',
-          brief: '研究如何使计算机理解、处理和生成人类语言，实现人机自然语言交互。',
-          image: 'https://picsum.photos/id/31/600/400',
-          details: [
-            '自然语言处理是人工智能的重要分支，本方向致力于开发能够理解和生成自然语言的智能系统。我们研究各种语言处理任务，如文本分类、情感分析、命名实体识别、关系抽取、机器翻译、问答系统等。',
-            '近年来，我们特别关注预训练语言模型的优化与应用，以及多语言和跨模态语言处理技术。我们的研究成果已应用于智能客服、内容分析、信息检索等实际场景。'
+          "id": "vertical-llm",
+          "icon": "Promotion",
+          "title": "多模态垂类大模型构建技术",
+          "brief": "基于行业高质量数据集，攻克垂类大模型定制、动态知识库构建与多维度评估技术，解决通用大模型行业应用短板。",
+          "image": "public/sucai/research2.jpg",
+          "details": [
+            "聚焦智慧交通、职业教育、智能陪伴等领域，采用垂域多模态适配与LoRA等PEFT微调技术，注入领域知识，实现低算力成本的模型行业化定制。",
+            "构建RAG动态知识库保障信息时效性，建立'自动化+人工'多维度评估体系，形成持续反馈优化闭环，为智能体精准决策提供核心模型支撑。"
           ],
-          topics: [
-            '大语言模型优化与应用',
-            '多语言处理与机器翻译',
-            '情感分析与意见挖掘',
-            '知识图谱与语义理解',
-            '对话系统与智能交互'
+          "topics": [
+            "垂类多模态模型微调",
+            "领域知识注入技术",
+            "RAG动态知识库构建",
+            "模型增量更新管理",
+            "多维度模型评估体系"
           ]
         },
         {
-          id: 'computer-vision',
-          icon: 'el-icon-picture',
-          title: '计算机视觉',
-          brief: '研究如何使计算机能够理解和解释图像和视频数据，模拟人类视觉系统的功能。',
-          image: 'https://picsum.photos/id/32/600/400',
-          details: [
-            '计算机视觉是人工智能领域的重要研究方向，本方向致力于开发能够从图像和视频中提取信息的算法和系统。我们研究图像分类、目标检测、语义分割、姿态估计、行为识别等核心任务。',
-            '我们特别关注多模态视觉理解、视频分析、场景理解等前沿问题，以及在安防、自动驾驶、医疗影像等领域的应用。我们的研究团队在国际计算机视觉顶级会议上发表了多篇论文。'
+          "id": "agent-service",
+          "icon": "Cpu",
+          "title": "智能体驱动增值服务技术",
+          "brief": "突破传统模型服务局限，构建智能体核心驱动的增值服务平台，推动数据智能从工具辅助向业务伙伴升级。",
+          "image": "public/sucai/research3.jpg",
+          "details": [
+            "围绕重点领域攻关垂直场景智能体构建与集成技术，实现从意图识别到任务执行的闭环赋能，建立智能体自治运维与价值评估体系，保障行为可控可信。",
+            "打造低代码编排与云边端协同平台，降低智能体构建门槛，实现跨域资源高效调度，形成自主演进、协同运作的智能体服务生态。"
           ],
-          topics: [
-            '多模态图像理解',
-            '视频分析与行为识别',
-            '目标检测与跟踪',
-            '医学影像分析',
-            '3D视觉与重建'
-          ]
-        },
-        {
-          id: 'big-data',
-          icon: 'el-icon-data-line',
-          title: '大数据分析与处理',
-          brief: '研究大规模数据的高效存储、处理和分析技术，为数据驱动决策提供支持。',
-          image: 'https://picsum.photos/id/33/600/400',
-          details: [
-            '随着数据规模的爆炸式增长，大数据分析与处理技术变得越来越重要。本方向研究分布式计算、云计算、流计算等大规模数据处理技术，以及数据可视化、数据质量管理等关键问题。',
-            '我们开发了多个大数据分析平台和工具，支持PB级数据的高效处理和分析。我们的研究成果已应用于互联网、金融、医疗、交通等多个领域，为企业和政府的决策提供了有力支持。'
-          ],
-          topics: [
-            '分布式数据处理框架',
-            '实时流数据处理',
-            '数据可视化技术',
-            '数据质量评估与管理',
-            '大数据系统性能优化'
-          ]
-        },
-        {
-          id: 'ai-ethics',
-          icon: 'el-icon-shield',
-          title: '人工智能伦理与安全',
-          brief: '研究人工智能技术发展中的伦理问题、安全风险和监管策略。',
-          image: 'https://picsum.photos/id/34/600/400',
-          details: [
-            '随着人工智能技术的广泛应用，伦理问题和安全风险日益凸显。本方向研究AI公平性、透明度、隐私保护、安全性等问题，以及相关的政策和监管框架。',
-            '我们的研究旨在确保人工智能技术的发展符合伦理标准和社会价值观，促进AI技术的负责任创新和应用。我们与法律、哲学、社会学等领域的专家合作，开展跨学科研究。'
-          ],
-          topics: [
-            'AI公平性与偏见消除',
-            '算法透明度与可解释性',
-            '隐私保护机器学习',
-            'AI安全与对抗性防御',
-            'AI伦理政策与监管'
+          "topics": [
+            "垂直场景智能体构建",
+            "智能体自治运维技术",
+            "低代码智能体编排",
+            "云边端协同调度",
+            "智能体服务生态构建"
           ]
         }
       ],
@@ -205,7 +173,7 @@ export default {
 }
 
 .page-header {
-  background: url('https://picsum.photos/id/21/1920/600') center/cover no-repeat;
+  background: url('../assets/bg/research.jpg') center/cover no-repeat;
   padding: 120px 0;
   text-align: center;
   position: relative;
@@ -479,24 +447,24 @@ export default {
   .page-header {
     padding: 80px 0;
   }
-  
+
   .page-header h1 {
     font-size: 2.5rem;
   }
-  
+
   .overview-content h2 {
     font-size: 1.8rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .detail-content {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  
+
   .detail-item {
     padding: 30px 20px;
   }
@@ -506,7 +474,7 @@ export default {
   .page-header h1 {
     font-size: 2rem;
   }
-  
+
   .area-item,
   .method-item {
     padding: 25px 20px;

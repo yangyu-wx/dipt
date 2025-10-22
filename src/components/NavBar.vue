@@ -3,8 +3,8 @@
     <div class="container">
       <div class="navbar-logo">
         <router-link to="/" class="logo-link">
-          <img src="../assets/logo1.png" alt="数据智能创新平台" class="logo-image">
-          <span class="logo-text">数据智能创新平台</span>
+          <img src="../assets/logo1.png" alt="数据智能创新中心" class="logo-image">
+          <span class="logo-text">数据智能创新中心</span>
         </router-link>
       </div>
       

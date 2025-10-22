@@ -2,7 +2,7 @@
   <div class="app-container">
     <!-- 导航栏 -->
     <NavBar />
-    
+
     <!-- 主内容区 -->
     <main class="main-content">
       <router-view v-slot="{ Component }">
@@ -11,7 +11,7 @@
         </transition>
       </router-view>
     </main>
-    
+
     <!-- 页脚 -->
     <footer class="footer">
       <div class="container">
@@ -33,15 +33,15 @@
             <div class="link-group">
               <h3>联系方式</h3>
               <ul>
-                <li>地址：北京市海淀区中关村科技园区</li>
-                <li>电话：010-12345678</li>
-                <li>邮箱：contact@data-intelligence-center.com</li>
+                <li>地址：河北省保定市莲池区东风东路999号</li>
+                <li>电话：0312-5097654</li>
+                <li>邮箱：wangxiang@hbsi.edu.cn</li>
               </ul>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; {{ new Date().getFullYear() }} 数据智能创新中心 版权所有</p>
+          <p>&copy; {{ new Date().getFullYear() }} 河北软件职业技术学院 版权所有</p>
         </div>
       </div>
     </footer>
@@ -67,7 +67,8 @@ export default {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
@@ -159,11 +160,13 @@ html, body {
 }
 
 /* 页面切换动画 */
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.3s ease;
 }
 
-.fade-enter-from, .fade-leave-to {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
 
@@ -172,12 +175,12 @@ html, body {
   .main-content {
     margin-top: 70px;
   }
-  
+
   .footer-content {
     flex-direction: column;
     gap: 40px;
   }
-  
+
   .footer-links {
     gap: 40px;
   }
@@ -187,12 +190,12 @@ html, body {
   .footer {
     padding: 40px 0 20px;
   }
-  
+
   .footer-links {
     flex-direction: column;
     gap: 30px;
   }
-  
+
   .footer-logo h2 {
     font-size: 1.5rem;
   }
