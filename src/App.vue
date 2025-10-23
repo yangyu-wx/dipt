@@ -172,9 +172,6 @@ body {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-  .main-content {
-    margin-top: 70px;
-  }
 
   .footer-content {
     flex-direction: column;

@@ -45,17 +45,17 @@ export default {
     return {
       carouselItems: [
         {
-          image: 'public/lunbo/ai1.jpg',
+          image: '/lunbo/ai1.jpg',
           title: '数据驱动未来',
           description: '探索人工智能与大数据分析的无限可能'
         },
         {
-          image: 'public/lunbo/ai2.jpg',
+          image: '/lunbo/ai2.jpg',
           title: '智能改变世界',
           description: '前沿技术研究与创新应用'
         },
         {
-          image: 'public/lunbo/ai3.jpg',
+          image: '/lunbo/ai3.jpg',
           title: '创新引领发展',
           description: '构建产学研协同创新生态'
         }

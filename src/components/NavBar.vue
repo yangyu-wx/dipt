@@ -7,45 +7,39 @@
           <span class="logo-text">数据智能创新中心</span>
         </router-link>
       </div>
-      
+
       <!-- 桌面导航 -->
       <div class="navbar-menu">
         <ul class="nav-list">
           <li class="nav-item" v-for="item in navItems" :key="item.path">
-            <router-link 
-              :to="item.path" 
-              class="nav-link"
-              active-class="active"
-              :class="{ 'active': currentPath === item.path }"
-            >
+            <router-link :to="item.path" class="nav-link" active-class="active"
+              :class="{ 'active': currentPath === item.path }">
               {{ item.label }}
             </router-link>
           </li>
         </ul>
       </div>
-      
+
       <!-- 移动端菜单按钮 -->
       <div class="navbar-toggle" @click="toggleMenu">
-        <i class="el-icon-menu"></i>
+        <el-icon>
+          <Menu />
+        </el-icon>
       </div>
     </div>
-    
+
     <!-- 移动端菜单 -->
     <div class="mobile-menu" :class="{ 'menu-visible': menuVisible }">
       <ul class="mobile-nav-list">
         <li class="mobile-nav-item" v-for="item in navItems" :key="item.path">
-          <router-link 
-            :to="item.path" 
-            class="mobile-nav-link"
-            @click="toggleMenu"
-            :class="{ 'active': currentPath === item.path }"
-          >
+          <router-link :to="item.path" class="mobile-nav-link" @click="toggleMenu"
+            :class="{ 'active': currentPath === item.path }">
             {{ item.label }}
           </router-link>
         </li>
       </ul>
     </div>
-    
+
     <!-- 背景遮罩 -->
     <div class="menu-overlay" v-show="menuVisible" @click="toggleMenu"></div>
   </nav>
@@ -108,9 +102,10 @@ export default {
 <style scoped>
 .logo-image {
   width: 50px;
-  height:50px;
+  height: 50px;
   margin-right: 15px;
 }
+
 .navbar {
   position: fixed;
   top: 0;
@@ -295,24 +290,28 @@ export default {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+  .navbar {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), transparent);
+  }
+
   .navbar-menu {
     display: none;
   }
-  
+
   .navbar-toggle {
     display: block;
   }
-  
+
   .logo-text {
     font-size: 1.3rem;
   }
-  
+
   .container {
     height: 70px;
   }
-  
+
   .mobile-menu {
-    top: 70px;
+    top: 0px;
     height: calc(100vh - 70px);
   }
 }
@@ -321,7 +320,7 @@ export default {
   .logo-text {
     font-size: 1.1rem;
   }
-  
+
   .container {
     padding: 0 15px;
   }
