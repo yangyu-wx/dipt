@@ -312,7 +312,7 @@ export default {
 
   .mobile-menu {
     top: 0px;
-    height: calc(100vh - 70px);
+    height: 100vh;
   }
 }
 
